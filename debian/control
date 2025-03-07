@@ -3,20 +3,20 @@ Section: graphics
 Priority: optional
 Maintainer: GD Team <team+gd@tracker.debian.org>
 Uploaders: Ondřej Surý <ondrej@debian.org>
-Build-Depends: autotools-dev,
-	       debhelper (>= 9.20150101~),
-	       libpng-dev,
-	       libz-dev,
-	       libjpeg-dev,
-	       libfreetype6-dev,
-	       libxpm-dev,
-	       libx11-dev,
-	       libxt-dev,
-	       libfontconfig-dev,
-	       libwebp-dev,
-	       libtiff-dev,
-	       dh-autoreconf,
-	       html2text
+Build-Depends: debhelper (>= 10),
+               libavif-dev | base-files (<< 11.1~),
+               libfontconfig-dev,
+               libfreetype-dev | libfreetype6-dev,
+               libheif-dev | base-files (<< 11.1~),
+               libimagequant-dev,
+               libjpeg-dev,
+               libpng-dev,
+               libraqm-dev,
+               libtiff-dev,
+               libwebp-dev,
+               libx11-dev,
+               libxpm-dev,
+               libz-dev
 Vcs-Git: https://salsa.debian.org/debian/libgd2.git
 Vcs-Browser: https://salsa.debian.org/debian/libgd2
 Standards-Version: 3.9.3
@@ -24,7 +24,9 @@ Homepage: http://www.libgd.org/
 
 Package: libgd-tools
 Architecture: any
-Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends}
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends}
 Suggests: libgd-dev
 Description: GD command line tools and example code
  GD is a graphics library. It allows your code to quickly draw images
@@ -40,18 +42,22 @@ Package: libgd-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: libgd3 (= ${binary:Version}),
-	 ${misc:Depends},
-	 libpng-dev,
-	 libz-dev,
-	 libjpeg-dev,
-	 libfreetype6-dev,
-	 libxpm-dev,
-	 libx11-dev,
-	 libxt-dev,
-	 libfontconfig-dev,
-	 libvpx-dev,
-	 libtiff-dev
+Depends: libavif-dev | base-files (<< 11.1~),
+         libfontconfig-dev,
+         libfreetype6-dev,
+         libgd3 (= ${binary:Version}),
+         libheif-dev | base-files (<< 11.1~),
+         libimagequant-dev,
+         libjpeg-dev,
+         libpng-dev,
+         libraqm-dev,
+         libtiff-dev,
+         libvpx-dev,
+         libwebp-dev,
+         libx11-dev,
+         libxpm-dev,
+         libz-dev,
+         ${misc:Depends}
 Description: GD Graphics Library (development version)
  GD is a graphics library. It allows your code to quickly draw images
  complete with lines, arcs, text, multiple colours, cut and paste from
@@ -66,7 +72,8 @@ Architecture: any
 Multi-Arch: same
 Section: libs
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
 Suggests: libgd-tools
 Description: GD Graphics Library
  GD is a graphics library. It allows your code to quickly draw images

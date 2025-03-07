@@ -1,4 +1,7 @@
-# run the "uscan" command to check for upstream updates and more.
-version=3
-opts=uversionmangle=s/RC/~rc/,dversionmangle=s/\~dfsg$// \
-  https://github.com/libgd/libgd/releases .*/libgd-?(\d\S+)\.tar\.gz
+version=4
+opts="searchmode=plain,\
+filenamemangle=s%libgd-@ANY_VERSION@%@PACKAGE@-$1@ARCHIVE_EXT@%,\
+uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha)\d*)$/$1~$2/" \
+https://api.github.com/repos/libgd/libgd/releases \
+https://github.com/libgd/libgd/releases/download/gd-\d[\-+\.:\~\da-zA-Z]*/libgd-@ANY_VERSION@@ARCHIVE_EXT@
+
