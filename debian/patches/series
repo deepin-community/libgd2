@@ -3,3 +3,6 @@
 0003-tests-make-a-little-change-for-autopkgtest.patch
 0004-Add-missing-getlib.sh-script.patch
 0005-Fix-615-gdImageStringFT-fails-for-empty-strings-as-o.patch
+CVE-2021-40145.patch
+CVE-2021-38115.patch
+CVE-2021-40812.patch

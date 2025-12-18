@@ -1,3 +1,13 @@
+libgd2 (2.3.0-2+deb11u1) bullseye-security; urgency=high
+
+  * Non-maintainer upload by the LTS Team.
+  * Fix CVE-2021-40145: double free in gdImageGd2Ptr().
+  * Fix CVE-2021-38115: Out-of-bounds read via crafted TGA file. (Closes:
+    #991912)
+  * Fix CVE-2021-40812: Out-of-bounds read via crafted BMP or WebP files.
+
+ -- Guilhem Moulin <guilhem@debian.org>  Mon, 15 Dec 2025 23:08:02 +0100
+
 libgd2 (2.3.0-2) unstable; urgency=medium
 
   * Add patch to fix gdImageStringFT() fails for empty strings
