@@ -1,3 +1,10 @@
+libgd2 (2.3.3-13) unstable; urgency=medium
+
+  * Disable libraqm support as it breaks vertical text
+  * Add pkg.libgd2.noheif build profile (Closes: #1077633)
+
+ -- Ondřej Surý <ondrej@debian.org>  Sun, 27 Apr 2025 14:54:43 +0200
+
 libgd2 (2.3.3-12) unstable; urgency=medium
 
   * Add new B-D also to libgd-dev (Closes: #1076152)
