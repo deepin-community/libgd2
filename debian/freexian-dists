@@ -1,0 +1,6 @@
+DISTS=${DISTS//focal}
+DISTS=${DISTS//bionic}
+DISTS=${DISTS//xenial}
+DISTS=${DISTS//jessie}
+DISTS=${DISTS//stretch}
+DISTS=${DISTS//buster}

@@ -38,6 +38,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
 		--disable-rpath \
 		--with-tiff=/usr \
+		--without-raqm \
 		$(CONFIGURE_AVIF) \
 		$(CONFIGURE_HEIF) \
 		--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
